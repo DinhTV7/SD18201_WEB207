@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS</title>
+    <!-- Nhúng thư viện -->
+    <script src="./libs/angular.min.js"></script>
+</head>
+<!-- Để khởi tạo chương trình, đầu tiên chúng ta cần định nghĩa vùng sử sụng angularjs -->
+<!-- ng-app: dùng để định nghĩa vùng sử dụng angularjs -->
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <h1>{{ xinchao }}</h1>
+    </div>
+    <!-- 
+        Đăng ký 1 vùng controller mới
+        khai báo và hiển thị ra Tên, năm sinh, chuyên ngành
+    -->
+    <div ng-controller="infoMe">
+        <h2>{{ ten }}</h2>
+        <h2>{{ namsinh }}</h2>
+        <h2>{{ chuyennganh }}</h2>
+        <h2>Danh sách sinh viên</h2>
+        <table border="1">
+            <tr>
+                <td>Tên</td>
+                <td>Năm sinh</td>
+                <td>Chuyên ngành</td>
+            </tr>
+            <tr>
+                <td>{{ students[0].ten }}</td>
+                <td>{{ students[0].namsinh }}</td>
+                <td>{{ students[0].chuyennganh }}</td>
+            </tr>
+            <tr>
+                <td>{{ students[1].ten }}</td>
+                <td>{{ students[1].namsinh }}</td>
+                <td>{{ students[1].chuyennganh }}</td>
+            </tr>
+        </table>
+
+        <h2>Danh sách sinh viên 2</h2>
+        <table border="">
+            <tr>
+                <td>Tên</td>
+                <td>Năm sinh</td>
+                <td>Chuyên ngành</td>
+            </tr>
+            <tr ng-repeat="item in students">
+                <td>{{ item.ten }}</td>
+                <td>{{ item.namsinh }}</td>
+                <!-- <td>{{ item.chuyennganh }}</td> -->
+                <td ng-bind="item.chuyennganh"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<!-- Nhúng trực tiếp -->
+<script>
+    // // Khởi tạo module
+    // // Set angular cho vùng myApp
+    // let dinh = angular.module('myApp', []); // Có 2 tham số (tên của ng-app, thành phần phụ thuộc)
+
+    // // khởi tạo vùng controller
+    // dinh.controller('demoController', myFunction);
+
+    // function myFunction($scope) { // tham số scope luôn luôn phải có để render dữ liệu
+    //     // Khai báo biến
+    //     $scope.xinchao = "Hello world";
+    //     // sau $scope là biến được khai báo để render dữ liệu
+
+    //     console.log($scope.xinchao);
+    // }
+    // // dinh.controller('infoMe', myInfo);
+    // // function myInfo ($scope) {
+    // //     $scope.ten = "DinhTV7";
+    // //     $scope.namsinh = "2004";
+    // //     $scope.chuyennganh = "CNTT";
+    // // }
+    // dinh.controller('infoMe', function ($scope) {
+    //     $scope.ten = "DinhTV7";
+    //     $scope.namsinh = "2004";
+    //     $scope.chuyennganh = "CNTT";
+    // });
+</script>
+<!-- Liên kết ngoài -->
+<script src="./js/buoi5.js"></script>
+</html>
