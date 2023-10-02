@@ -1,3 +1,64 @@
 <div>
     <h1>{{ title }}</h1>
+    <!-- Sự kiện ng-submit -->
+    <h2>Thêm thông tin</h2>
+    <form ng-submit="themMoi()">
+        <label for="" class="form-label">Tên</label>
+        <input type="text" class="form-control" ng-model="inputValue.name">
+        
+        <label for="" class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control" ng-model="inputValue.address">
+        
+        <button type="submit" class="btn btn-success">Thêm mới</button>
+    </form>
+
+    <!-- 
+        Bài 1: Tạo 1 form nhập vào 2 số, và 1 button
+        Sau khi submit thì tiến hành cộng 2 số và hiển thị kết quả
+    -->
+    <h2>Bài 1: Tính tổng</h2>
+    <form ng-submit="tinhTong()">
+        <label for="" class="form-label">Số thứ nhất:</label>
+        <input type="text" class="form-control" ng-model="number.one">
+        
+        <label for="" class="form-label">Số thứ hai:</label>
+        <input type="text" class="form-control" ng-model="number.two">
+        
+        <button type="submit" class="btn btn-success">Tính tổng</button>
+    </form>
+    <!-- 
+        ng-if: dùng để điều khiển việc tồn tại hay không tồn tại phần tử 
+        Nếu biểu thức đúng phần tử sẽ tồn tại, ngược lại sẽ không tồn tại
+    -->
+    <p ng-if="sum">Tổng của hai số là : {{ sum }}</p>
+
+    <!-- Bài 2:
+        Tạo 1 form đăng nhập. Nếu mật khẩu bằng thaydinhdz thì hiển thị
+        Chào mừng + tên đăng nhập
+        Sử dụng ng-show để thị thị
+
+        ngược lại thì thông báo sai thông tin đăng nhập (alert)
+    -->
+    <h2>Bài 2: Đăng nhập</h2>
+    <form ng-submit="checkLogin()">
+        <label for="" class="form-label">Tên đăng nhập:</label>
+        <input type="text" class="form-control" ng-model="user.name">
+        
+        <label for="" class="form-label">Mật khẩu:</label>
+        <input type="text" class="form-control" ng-model="user.pass">
+        
+        <button type="submit" class="btn btn-success">Đăng nhập</button>
+    </form>
+    <p ng-show="logged">Chào mừng: {{ user.name }}</p>
+
+    <!-- 
+        Bài 3: Tạo 1 button có sự kiện ng-click
+        Nếu ấn đến lần thứ 5 thì sẽ hiển thị cảnh báo đỏ
+     -->
+    <h2>Bài 3: Click</h2>
+    <button ng-click="countClick()" type="submit" class="btn btn-success">Click!!</button>
+    <p ng-if="count >= 5" class="text-danger">Bạn đã ấn 5 lần!</p>
+    <ul ng-show="count > 0">
+        <li>Bạn đã ấn {{ count }} lần</li>
+    </ul>
 </div>
