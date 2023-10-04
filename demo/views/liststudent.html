@@ -1,0 +1,21 @@
+<div class="card mt-5">
+    <h5 class="card-header">{{ title }}</h5>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th>STT</th>
+                <th>Họ và tên</th>
+                <th>Năm sinh</th>
+                <th>Chuyên ngành</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in listStudents">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ item.ten }}</td>
+                    <td>{{ item.namsinh }}</td>
+                    <td>{{ item.chuyennganh }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

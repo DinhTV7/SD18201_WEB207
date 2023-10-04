@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "title": "Thầy định đẹp trai",
+      "author": "DinhTV7",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "students": [
+    {
+      "id": 1,
+      "ten": "Tạ Văn Định",
+      "namsinh": 2004,
+      "chuyennganh": "CNTT"
+    },
+    {
+      "id": 2,
+      "ten": "DinhTV7",
+      "namsinh": 2004,
+      "chuyennganh": "CNTT"
+    }
+  ]
+}
