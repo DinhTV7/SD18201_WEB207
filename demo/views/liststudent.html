@@ -10,6 +10,7 @@
                 <th>Họ và tên</th>
                 <th>Năm sinh</th>
                 <th>Chuyên ngành</th>
+                <th>Thao tác</th>
             </thead>
             <tbody>
                 <tr ng-repeat="item in listStudents">
@@ -17,6 +18,12 @@
                     <td>{{ item.ten }}</td>
                     <td>{{ item.namsinh }}</td>
                     <td>{{ item.chuyennganh }}</td>
+                    <td>
+                        <a href="#!/edit-student/{{ item.id }}" class="text-decoration-none">
+                            <button class="btn btn-warning">Sửa</button>
+                        </a>
+                        <button ng-click="deleteStudent(item.id)" class="btn btn-danger">Xóa</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

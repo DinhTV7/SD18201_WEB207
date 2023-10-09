@@ -1,7 +1,7 @@
 <div class="card mt-5">
     <h5 class="card-header">{{ title }}</h5>
     <div class="card-body">
-        <form ng-submit="addStudent()">
+        <form ng-submit="editStudent()">
             <label for="" class="form-label">Họ và tên:</label>
             <input type="text" class="form-control" ng-model="student.name">
             <div ng-if="kiemTra.name" class="text-danger">
@@ -22,7 +22,7 @@
 
             <div class="text-center mt-3">
                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
-                <button type="submit" class="btn btn-success">Thêm mới</button>
+                <button type="submit" class="btn btn-success">Sửa</button>
             </div>
         </form>
     </div>

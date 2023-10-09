@@ -1,10 +1,28 @@
-window.AddStudentController = function ($scope, $http, $location) {
-    $scope.title = "Thêm thông tin sinh viên";
+window.EditStudentController = function ($scope, $http, $routeParams, $location) {
+    $scope.title = "Sửa thông tin sinh viên";
 
-    $scope.addStudent = function () {
-        // Link API
-        const apiStudent = "http://localhost:3000/students";
+    // Link API
+    const apiStudent = "http://localhost:3000/students";
 
+    // Lấy id của sinh viên từ URL
+    let studentID = $routeParams.id;
+
+    // Lấy thông tin chi tiết sinh viên
+    $http.get(
+        `${apiStudent}/${studentID}`
+        // http://localhost:3000/students/id
+    ).then(function (response) {
+        // console.log(response.data);
+        if (response.status == 200) {
+            $scope.student = {
+                name: response.data.ten,
+                year: response.data.namsinh,
+                couse: response.data.chuyennganh
+            }
+        }
+    })
+
+    $scope.editStudent = function () {
         // Tạo 1 biến để kiểm tra
         let flag = true;
 
@@ -34,20 +52,18 @@ window.AddStudentController = function ($scope, $http, $location) {
         // Kiểm tra xem đã điền đầy đủ thông tin chưa
         if (flag) {
             // Lấy dữ liệu nhập vào từ form
-            let newStudent = {
+            let updateStudent = {
                 ten: $scope.student.name,
                 namsinh: $scope.student.year,
                 chuyennganh: $scope.student.couse
             }
-            // console.log(newStudent);
-
             // Call api để thêm dữ liệu
-            $http.post(
-                apiStudent,// Link API
-                newStudent // Dữ liệu muốn thêm
+            $http.put(
+                `${apiStudent}/${studentID}`,// Link API theo id
+                updateStudent // Dữ liệu mới nhập vào từ input
             ).then(function (response) {
                 // console.log(response);
-                if (response.status == 201) {
+                if (response.status == 200) {
                     // Di chuyển tảng 1 trang nào đó
                     $location.path("trang-chu");
                 }
