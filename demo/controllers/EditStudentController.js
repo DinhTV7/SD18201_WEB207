@@ -1,5 +1,8 @@
 window.EditStudentController = function ($scope, $http, $routeParams, $location) {
-    $scope.title = "Sửa thông tin sinh viên";
+    $scope.title = "Chỉnh sửa thông tin sinh viên";
+    $scope.titleDetail = "Chi tiết thông tin sinh viên";
+
+    // $scope.gioiTinh = "Nữ";
 
     // Link API
     const apiStudent = "http://localhost:3000/students";
@@ -15,6 +18,7 @@ window.EditStudentController = function ($scope, $http, $routeParams, $location)
         // console.log(response.data);
         if (response.status == 200) {
             $scope.student = {
+                editid: response.data.id,
                 name: response.data.ten,
                 year: response.data.namsinh,
                 couse: response.data.chuyennganh

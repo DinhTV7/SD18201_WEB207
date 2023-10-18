@@ -12,10 +12,10 @@
   },
   "students": [
     {
-      "id": 1,
-      "ten": "Tạ Văn Định",
+      "ten": "Tạ Văn Định 2",
       "namsinh": 2004,
-      "chuyennganh": "CNTT"
+      "chuyennganh": "CNTT",
+      "id": 1
     },
     {
       "id": 2,
