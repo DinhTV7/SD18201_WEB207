@@ -1,21 +1,7 @@
 <div class="card mt-5">
-    <h5 class="card-header">{{ date }}</h5>
+    <h5 class="card-header">{{ title }}</h5>
     <div class="card-body">
-        <form ng-submit="editStudent()">
-<!-- 
-            <select name="" id="" ng-model="gioiTinh">
-                <option value="Nữ">Nữ</option>
-                <option value="Nam">Nam</option>
-            </select>
-            <br>
-            Nam
-            <input type="radio" name="gioiTinh" id="" value="Nam" ng-model="gioiTinh">
-            <br>
-            Nữ
-            <input type="radio" name="gioiTinh" id="" value="Nữ" ng-model="gioiTinh">
-            <br> -->
-
-            
+        <form ng-submit="editStudent()">   
             <label for="" class="form-label">Họ và tên:</label>
             <input type="text" class="form-control" ng-model="student.name" disabled>
 

@@ -1,8 +1,7 @@
 window.EditStudentController = function ($scope, $http, $routeParams, $location) {
     $scope.title = "Chỉnh sửa thông tin sinh viên";
-    $scope.titleDetail = "Chi tiết thông tin sinh viên";
 
-    // $scope.gioiTinh = "Nữ";
+    $scope.gioiTinh = "Nam";
 
     // Link API
     const apiStudent = "http://localhost:3000/students";
